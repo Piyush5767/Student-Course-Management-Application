@@ -1,0 +1,17 @@
+﻿<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+<h1>Courses</h1>
+<ul>
+    <li *ngFor="let article of articles">
+        <a [routerLink]="['/articles', article._id]">{{article.courseName}}</a>
+        <br>
+        <h5>Course Details</h5>
+        <p><Strong>Course Code: </Strong>{{article.courseCode}}</p>
+        <p><Strong>Course Name: </Strong>{{article.courseSection}}</p>
+        <p><Strong>Course Semester: </Strong>{{article.courseSemester}}</p>
+        <small>{{article.created}}/{{article.creator.fullName}}</small>
+    </li>
+</ul>
+<div *ngIf="articles && articles.length === 0">
+    No articles yet, why don't you <a [routerLink]="['/articles/
+create']">create one</a>?
+</div>

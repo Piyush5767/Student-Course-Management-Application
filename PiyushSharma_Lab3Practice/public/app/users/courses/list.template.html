@@ -1,0 +1,16 @@
+﻿<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+<h1>Student Courses</h1>
+<ul>
+    <li *ngFor="let course of courses">
+        <br>
+        <h5>Course Details</h5>
+        <p><Strong>Course Name: </Strong>{{course.courseName}}</p>
+        <p><Strong>Course Code: </Strong>{{course.courseCode}}</p>
+        <p><Strong>Course Section: </Strong>{{course.courseSection}}</p>
+        <p><Strong>Course Semester: </Strong>{{course.courseSemester}}</p>
+        <p><Strong>Course Selected: </Strong>{{course.created}}</p>
+    </li>
+</ul>
+<div *ngIf="courses && courses.length === 0">
+    No course yet, Student haven't selected any couses yet.
+</div>

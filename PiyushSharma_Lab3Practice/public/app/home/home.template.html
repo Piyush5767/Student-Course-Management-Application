@@ -1,0 +1,31 @@
+﻿<div *ngIf="user">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+    <div *ngIf="user.type === 'admin'">
+        <h1>Welcome Back Admin: {{user.firstName +' '+user.lastName}}</h1>
+        <a href="/api/auth/signout">Signout</a>
+        <ul>
+            <li><a [routerLink]="['/articles']">List Courses</a></li>
+            <li><a [routerLink]="['/users']">List Students</a></li>
+            <li><a [routerLink]="['/articles/create']">Create Course</a></li>
+        </ul>
+    </div>
+    <div *ngIf="user.type === 'student'">
+        <h1>Hello {{user.firstName +' '+user.lastName}}</h1>
+        <a href="/api/auth/signout">Signout</a>
+        <ul>
+            <li><a [routerLink]="['/articles']">List Courses</a></li>
+            <li><a [routerLink]="['/articles/selected']">Course Selected</a></li>
+            <li><a [routerLink]="['/articles/append']">Add Course</a></li>
+            <li><a [routerLink]="['/articles/exclude']">Drop Course</a></li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="!user" class="text-center">
+    <div class="row"><img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72"></div>
+    <h2>Welcome to online course maganement portal</h2>
+    <p>If you already have a account with us then please click on Signin Button</p>
+    <p>If you are a new student then please register with us!</p>
+    <a [routerLink]="['/authentication/signin']" class="btn btn-primary">Signin</a>
+    <a [routerLink]="['/authentication/signup']" class="btn btn-success">Signup</a>
+    <a [routerLink]="['/articles']" class="btn btn-warning">Courses</a>
+</div>

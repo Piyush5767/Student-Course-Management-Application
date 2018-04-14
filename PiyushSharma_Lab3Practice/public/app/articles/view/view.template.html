@@ -1,0 +1,18 @@
+﻿<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+<section *ngIf="article && article.creator">
+    <p><Strong>Course Name: </Strong>{{article.courseName}}</p>
+    <p><Strong>Course Code: </Strong>{{article.courseCode}}</p>
+    <p><Strong>Course Name: </Strong>{{article.courseSection}}</p>
+    <p><Strong>Course Semester: </Strong>{{article.courseSemester}}</p>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a><br/>
+        <a [routerLink]="['/articles/course/student/list/', article.courseCode]">List Users</a><br/>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{article.creator.fullName}}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>

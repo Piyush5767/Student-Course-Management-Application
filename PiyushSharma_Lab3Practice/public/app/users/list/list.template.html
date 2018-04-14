@@ -1,0 +1,20 @@
+﻿<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+<h1>Students</h1>
+<ul>
+    <li *ngFor="let user of users">
+        <br>
+        <h5>User Details</h5>
+        <p><Strong>Student Name: </Strong>{{user.fullName}}</p>
+        <p><Strong>Student Email: </Strong>{{user.email}}</p>
+        <p><Strong>Student ID: </Strong>{{user.username}}</p>
+        <p><Strong>Phone Number: </Strong>{{user.phonenumber}}</p>
+        <p><Strong>City: </Strong>{{user.city}}</p>
+        <p><Strong>Address ID: </Strong>{{user.address}}</p>
+        <p>
+            <a [routerLink]="['/users/courses', user._id]" class="btn btn-success">{{user.fullName}} Courses</a>
+        </p>
+    </li>
+</ul>
+<div *ngIf="users && users.length === 0">
+   User List Empty
+</div>

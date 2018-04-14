@@ -1,0 +1,14 @@
+﻿<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" style="margin-bottom: 10px;" alt="" width="72" height="72">
+<h1>Add Course</h1>
+<form (ngSubmit)="append()" novalidate>
+    <div>
+        <label for="title">Enter Course Code</label>
+        <div>
+            <input type="text" required [(ngModel)]="article.courseCode" name="title" placeholder="Title">
+        </div>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>
